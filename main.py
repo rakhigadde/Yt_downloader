@@ -21,13 +21,12 @@ def download_video(url):
         # Download the video to BytesIO buffer
         buffer = BytesIO()
         video_stream.stream_to_buffer(buffer)
-        fname = f"{yt.title}.mp4",
+        #fname = f"{yt.title}.mp4",
         # Display download button
         st.download_button(
             label="Download Video",
             data=buffer.getvalue(),  # Use the BytesIO buffer directly
-            key=fname,  # Use the title of the video as the filename
-            file_name = fname,
+            file_name=f"{yt.title}.mp4",
             help="Click to download the video."
         )
 
