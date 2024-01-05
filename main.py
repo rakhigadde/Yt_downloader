@@ -27,6 +27,7 @@ def download_video(url):
             label="Download Video",
             data=buffer.getvalue(),  # Use the BytesIO buffer directly
             key=fname,  # Use the title of the video as the filename
+            file_name = fname,
             help="Click to download the video."
         )
 
