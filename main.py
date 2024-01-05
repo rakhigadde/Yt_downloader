@@ -26,7 +26,7 @@ def download_video(url):
         st.download_button(
             label="Download Video",
             data=buffer.getvalue(),  # Use the BytesIO buffer directly
-            key=f"{yt.title}.mp4",  # Use the title of the video as the filename
+            key="{}.mp4".format(yt.title),  # Use the title of the video as the filename
             help="Click to download the video."
         )
 
