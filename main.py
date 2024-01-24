@@ -37,6 +37,21 @@ def download_video(url):
 
 def main():
     st.title("YouTube Video Downloader")
+    RECAPTCHA_SECRET_KEY = "6LdseVspAAAAAJVcrSR7DrOOrXEGCqarUfSxqBip"
+
+# HTML and JavaScript code for reCAPTCHA form
+    recaptcha_code = """
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <form id="myForm" action="" method="post">
+    <!-- Your other form fields go here -->
+    <!-- Add the reCAPTCHA widget -->
+    <div class="g-recaptcha" data-sitekey="6LdseVspAAAAAJVcrSR7DrOOrXEGCqarUfSxqBip"></div>
+    <br>
+    <button type="submit">Submit</button>
+    </form>    """
+
+# Display reCAPTCHA form in Streamlit
+    st.markdown(recaptcha_code, unsafe_allow_html=True)
 
     # Input field for YouTube video URL
     video_url = st.text_input("Enter the YouTube video URL:")
